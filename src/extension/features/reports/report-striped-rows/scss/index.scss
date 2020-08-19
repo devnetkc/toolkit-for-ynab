@@ -1,0 +1,30 @@
+@import 'mixins/report-rows';
+
+body {
+  &,
+  &.theme-new-default,
+  &.theme-classic {
+    --tk-striped-transaction-row-color: #fafafa;
+  }
+
+  &.theme-dark {
+    --tk-striped-transaction-row-color: #1e1e1f;
+  }
+}
+
+.reports-content {
+  .income-expense-group {
+    .income-expense-level2 {
+      @include ReportRowBgStripes;
+    }
+  }
+}
+/*
+.ynab-grid
+  .ynab-grid-body-row:nth-of-type(even):not(.ynab-grid-body-empty):not(.ynab-grid-actions) {
+}
+
+This is at least loading now, i tested that css values are being loaded and used.
+Now to get the selectors right for the css  on the report page
+also should probably change description and/or title.
+*/
