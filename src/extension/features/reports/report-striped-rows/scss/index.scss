@@ -1,5 +1,3 @@
-@import 'mixins/report-rows';
-
 body {
   &,
   &.theme-new-default,
@@ -15,7 +13,9 @@ body {
 .reports-content {
   .income-expense-group {
     .income-expense-level2 {
-      @include ReportRowBgStripes;
+      .income-expense-row:nth-of-type(even):not(.is-scheduled):not(.is-checked):not(.is-editing) {
+        background-color: var(--tk-striped-transaction-row-color);
+      }
     }
   }
 }
